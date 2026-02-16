@@ -1,0 +1,74 @@
+{
+  "name": "@latticeruntime/md-client",
+  "version": "0.1.0",
+  "description": "Client library for openagent.md encrypted file sharing with signature support",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./ssh-agent": {
+      "import": {
+        "types": "./dist/ssh-agent.d.ts",
+        "default": "./dist/ssh-agent.js"
+      },
+      "require": {
+        "types": "./dist/ssh-agent.d.cts",
+        "default": "./dist/ssh-agent.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@noble/ed25519": "^3.0.0",
+    "@noble/curves": "^2.0.1",
+    "@noble/hashes": "^2.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/latticeHQ/md-client.git",
+    "directory": "."
+  },
+  "homepage": "https://openagent.md",
+  "keywords": [
+    "lattice",
+    "openagent.md",
+    "encryption",
+    "file-sharing",
+    "signatures",
+    "ed25519",
+    "ecdsa"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Lattice Runtime",
+  "bugs": {
+    "url": "https://github.com/latticeHQ/md-client/issues"
+  }
+}
